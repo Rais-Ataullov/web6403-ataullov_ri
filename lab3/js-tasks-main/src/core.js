@@ -62,10 +62,8 @@ function isBinary(n) {
  */
 function fibonacci(n) {
     if (n <= 1) return n;
-    let a = 0, b = 1;
-    for (let i = 2; i <= n; i++) {
-        [a, b] = [b, a + b];
-    }
+    let a = 0, b = 1, t = b;
+    for (let i = 2; i <= n; i++, t = b, b = a + b, a = t);
     return b;
 }
 
@@ -80,7 +78,7 @@ function fibonacci(n) {
  * console.log(sumFn(5)) - 15
  * console.log(sumFn(3)) - 18
  */
-function getOperationFn(initialValue, operatorFn) {
+function getOperationFn(initialValue, operatorFn = undefined) {
     let currentValue = initialValue;
     return function(newValue) {
         if (!operatorFn) return initialValue;
