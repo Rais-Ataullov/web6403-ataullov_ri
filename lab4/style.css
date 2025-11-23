@@ -1,0 +1,557 @@
+/* CSS переменные */
+:root {
+    --primary-red: #dc052d;
+    --primary-blue: #0066b3;
+    --background: #f5f5f5;
+    --text-color: #333;
+    --white: #fff;
+    --highlight-bg: #f9f9f9;
+    --border-color: #ddd;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для заголовков */
+.main__title {
+    color: var(--primary-red);
+    text-align: center;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+}
+
+.main__subtitle {
+    color: var(--primary-blue);
+    margin-top: 25px;
+}
+
+/* Стили для навигации */
+.nav {
+    background-color: var(--primary-red);
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    flex: 0 0 auto;
+}
+
+.nav__logo-image {
+    height: 40px;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.nav__logo-image:hover {
+    opacity: 1;
+}
+
+.nav__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+}
+
+.nav__item {
+    margin: 0 10px;
+}
+
+.nav__link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 3px;
+    transition: var(--transition);
+    display: block;
+}
+
+.nav__link:hover {
+    background-color: var(--primary-blue);
+}
+
+/* Стили для основного контента */
+.main {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+/* Стили для картинок */
+.main__image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.main__image {
+    max-width: 50%;
+    height: auto;
+}
+
+/* ВЕРСТКА С ПОМОЩЬЮ FLEXBOX (Главная страница) */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: var(--highlight-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.hero__logo {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__image {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero__text {
+    margin: 0;
+    border-left: none;
+    padding: 0;
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+.achievements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.achievements__card {
+    flex: 1 1 250px;
+    background-color: var(--highlight-bg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.achievements__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.achievements__icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.achievements__title {
+    color: var(--primary-red);
+    margin: 10px 0;
+}
+
+.achievements__text {
+    margin: 0;
+}
+
+/* ВЕРСТКА С ПОМОЩЬЮ GRID (Страница стадиона) */
+.stadium {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.stadium__card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.stadium__card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.stadium__card--large {
+    grid-column: span 2;
+}
+
+.stadium__card--feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--highlight-bg);
+}
+
+.stadium__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.stadium__content {
+    padding: 15px;
+}
+
+.stadium__title {
+    color: var(--primary-blue);
+    margin: 0 0 10px 0;
+}
+
+.stadium__text {
+    margin: 0;
+}
+
+.stadium__icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Стили для таблицы */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table--trophies th, 
+.table--trophies td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+}
+
+.table__header {
+    background-color: var(--primary-red);
+    color: var(--white);
+}
+
+/* Выравнивание в таблице */
+.table__header--left,
+.table__cell--left {
+    text-align: left;
+}
+
+.table__header--center,
+.table__cell--center {
+    text-align: center;
+}
+
+.table__header--right,
+.table__cell--right {
+    text-align: right;
+}
+
+/* Стили для футера */
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+.footer__text {
+    margin: 0;
+}
+
+/* Дополнительные стили */
+.highlight {
+    background-color: var(--highlight-bg);
+    padding: 15px;
+    border-left: 4px solid var(--primary-blue);
+    margin: 15px 0;
+}
+
+/* Стили для формы авторизации */
+.auth {
+    width: 50%;
+    margin: 30px auto;
+}
+
+.auth__form {
+    background-color: var(--highlight-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.auth__form-title {
+    color: var(--text-color);
+    margin-top: 0;
+    text-align: center;
+}
+
+.form__group {
+    margin-bottom: 20px;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form__input, .form__select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form__checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form__checkbox {
+    margin-right: 10px;
+}
+
+.form__checkbox-text {
+    font-size: 0.9rem;
+}
+
+.form__button {
+    width: 100%;
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 20px;
+}
+
+.form__button:hover {
+    background-color: var(--primary-blue);
+}
+
+/* АНИМАЦИЯ */
+/* Анимированный логотип с общей анимацией */
+.logo-composition {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: logo-sequence 4s infinite;
+}
+
+.logo-composition__circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.logo-composition__circle--red {
+    width: 120px;
+    height: 120px;
+    background-color: var(--primary-red);
+    z-index: 1;
+}
+
+.logo-composition__circle--white {
+    width: 80px;
+    height: 80px;
+    background-color: var(--background);
+    z-index: 2;
+}
+
+.logo-composition__text {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0) rotate(-10deg);
+}
+
+.logo-composition__word {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    line-height: 1.2;
+    transform: rotate(-5deg);
+}
+
+@keyframes logo-sequence {
+    
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1);
+    }
+    
+    25% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1);
+    }
+    
+    45% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    
+    80% {
+        transform: scale(1);
+    }
+    
+    90% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Анимации для каждого элемента внутри общей последовательности */
+@keyframes red-circle-anim {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    5% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+    10% {
+        transform: scale(0.9);
+    }
+    15% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes white-circle-anim {
+    0%, 20% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+    30% {
+        transform: scale(0.9);
+    }
+    35% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes text-anim {
+    0%, 40% {
+        opacity: 0;
+        transform: scale(0) rotate(-10deg);
+    }
+    45% {
+        opacity: 1;
+        transform: scale(1.2) rotate(-5deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(0.9) rotate(-5deg);
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.9) rotate(-5deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0) rotate(-10deg);
+    }
+}
+
+/* Применяем анимации к элементам */
+.logo-composition__circle--red {
+    animation: red-circle-anim 4s infinite;
+}
+
+.logo-composition__circle--white {
+    animation: white-circle-anim 4s infinite;
+}
+
+.logo-composition__text {
+    animation: text-anim 4s infinite;
+}
+
+.logo-composition__word:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.logo-composition__word:nth-child(3) {
+    animation-delay: 0.2s;
+}
