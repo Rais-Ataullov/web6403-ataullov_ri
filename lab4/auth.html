@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация - ФК Бавария Мюнхен</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/150px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" alt="Логотип Баварии" class="nav__logo-image">
+            </div>
+            <ul class="nav__list">
+                <li class="nav__item"><a href="main.html" class="nav__link">Главная</a></li>
+                <li class="nav__item"><a href="stadium.html" class="nav__link">Стадион</a></li>
+                <li class="nav__item"><a href="history.html" class="nav__link">История</a></li>
+                <li class="nav__item"><a href="auth.html" class="nav__link">Авторизация</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <main class="main">
+            <h1 class="main__title">Присоединяйтесь к клубу болельщиков!</h1>
+            
+            <div class="auth">
+                <div class="auth__form">
+                    <h2 class="auth__form-title">Регистрация</h2>
+                    <form id="registrationForm" class="form">
+                        <div class="form__group">
+                            <label for="username" class="form__label">Имя пользователя:</label>
+                            <input type="text" id="username" name="username" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email:</label>
+                            <input type="email" id="email" name="email" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="password" class="form__label">Пароль:</label>
+                            <input type="password" id="password" name="password" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="favoritePlayer" class="form__label">Любимый игрок:</label>
+                            <select id="favoritePlayer" name="favoritePlayer" class="form__select">
+                                <option value="">Выберите игрока</option>
+                                <option value="muller">Томас Мюллер</option>
+                                <option value="kimmich">Йозуа Киммих</option>
+                                <option value="neuer">Мануэль Нойер</option>
+                                <option value="musiala">Джамал Мусиала</option>
+                                <option value="kane">Гарри Кейн</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label class="form__checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="form__checkbox">
+                                <span class="form__checkbox-text">Подписаться на новостную рассылку</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label class="form__checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" class="form__checkbox" required>
+                                <span class="form__checkbox-text">Я согласен с условиями использования</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="form__button">Зарегистрироваться</button>
+                    </form>
+                </div>
+
+                <div class="logo-composition">
+                    <div class="logo-composition__circle logo-composition__circle--red"></div>
+                    <div class="logo-composition__circle logo-composition__circle--white"></div>
+                    <div class="logo-composition__text">
+                        <span class="logo-composition__word">Mia</span>
+                        <span class="logo-composition__word">San</span>
+                        <span class="logo-composition__word">Mia</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; 2025 Фан-сайт ФК Бавария Мюнхен. <i> Mia San Mia.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
