@@ -7,43 +7,62 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
+    <nav class="nav">
         <div class="container">
-            <ul>
-                <li><a href="main.html">Главная</a></li>
-                <li><a href="stadium.html">Стадион</a></li>
-                <li><a href="history.html">История</a></li>
+            <div class="nav__logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/150px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" alt="Логотип Баварии" class="nav__logo-image">
+            </div>
+            <ul class="nav__list">
+                <li class="nav__item"><a href="main.html" class="nav__link">Главная</a></li>
+                <li class="nav__item"><a href="stadium.html" class="nav__link">Стадион</a></li>
+                <li class="nav__item"><a href="history.html" class="nav__link">История</a></li>
+                <li class="nav__item"><a href="auth.html" class="nav__link">Авторизация</a></li>
             </ul>
         </div>
     </nav>
     
     <div class="container">
-        <main>
-            <h1>ФК Бавария Мюнхен</h1>
+        <main class="main">
+            <h1 class="main__title">ФК Бавария Мюнхен</h1>
             
-            <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/800px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" 
-                alt="Логотип Баварии Мюнхен" class="club-image">
+            <div class="hero">
+                <div class="hero__logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/800px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png" 
+                    alt="Логотип Баварии Мюнхен" class="hero__image">
+                </div>
+                
+                <div class="hero__text">
+                    <p>«Бава́рия» (нем. Fußball-Club Bayern München) — немецкий профессиональный футбольный клуб из Мюнхена. Основан в 1900 году, является одним из самых успешных клубов Германии и мира.</p>
+                </div>
             </div>
             
-            <div class="highlight">
-                <p>«Бава́рия» (нем. Fußball-Club Bayern München) — немецкий профессиональный футбольный клуб из Мюнхена. Основан в 1900 году, является одним из самых успешных клубов Германии и мира.</p>
-                <p>«Бавария» — самый титулованный клуб Германии, многократный победитель Бундеслиги и Лиги чемпионов УЕФА.</p>
-            </div>
+            <h2 class="main__subtitle">Основные достижения</h2>
             
-            <h2>Основные достижения</h2>
-            
-            <div class="highlight">
-                <p><span class="inline-element">Рекордсмен</span> по количеству чемпионских титулов в Бундеслиге</p>
-                <p><span class="inline-element">Шестикратный</span> победитель Лиги чемпионов УЕФА></p>
-                <p><span class="inline-element">Двадцатикратный</span> обладатель Кубка Германии</p>
+            <div class="achievements">
+                <div class="achievements__card">
+                    <div class="achievements__icon">🏆</div>
+                    <h3 class="achievements__title">Рекордсмен Бундеслиги</h3>
+                    <p class="achievements__text">Наибольшее количество чемпионских титулов в Германии</p>
+                </div>
+                
+                <div class="achievements__card">
+                    <div class="achievements__icon">⭐</div>
+                    <h3 class="achievements__title">Шестикратный победитель</h3>
+                    <p class="achievements__text">Лиги чемпионов УЕФА</p>
+                </div>
+                
+                <div class="achievements__card">
+                    <div class="achievements__icon">🥇</div>
+                    <h3 class="achievements__title">Двадцатикратный обладатель</h3>
+                    <p class="achievements__text">Кубка Германии</p>
+                </div>
             </div>
         </main>
     </div>
     
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Фан-сайт ФК Бавария Мюнхен.<i> Mia San Mia.</p>
+            <p class="footer__text">&copy; 2025 Фан-сайт ФК Бавария Мюнхен. <i> Mia San Mia.</p>
         </div>
     </footer>
 </body>
