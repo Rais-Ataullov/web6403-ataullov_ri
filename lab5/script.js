@@ -33,36 +33,6 @@ class UserData {
     }
 }
 
-// Обработчик отправки формы
-document.addEventListener('DOMContentLoaded', function() {
-    const registrationForm = document.getElementById('registrationForm');
-    
-    if (registrationForm) {
-        registrationForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // Получаем данные из формы
-            const username = document.getElementById('username').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const favoritePlayer = document.getElementById('favoritePlayer').value;
-            const newsletter = document.getElementById('newsletter').checked;
-            const terms = document.getElementById('terms').checked;
-            
-            // Создаем объект пользователя
-            const user = new UserData(username, email, password, favoritePlayer, newsletter, terms);
-            
-            // Выводим данные в консоль
-            user.logToConsole();
-            
-            // Показываем сообщение об успешной регистрации
-            alert(`Спасибо за регистрацию, ${username}! Ваши данные были записаны в консоль.`);
-            
-            // Очищаем форму
-            registrationForm.reset();
-        });
-    }
-});
 
 // 1. Динамическая проверка данных формы с выводом подсказок
 function setupFormValidation() {
@@ -245,9 +215,6 @@ async function fetchDataFromServer() {
 
 // 4. Периодическое получение данных (раз в 5 минут)
 function setupPeriodicDataFetch() {
-    // Получаем данные сразу при загрузке страницы
-    fetchDataFromServer();
-    
     // Устанавливаем интервал для периодического обновления
     const interval = 5 * 60 * 1000; // 5 минут в миллисекундах
     setInterval(() => {
@@ -355,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 await submitFormToServer({
                     username: user.username,
                     email: user.email,
-                    password: user.password, // В реальном приложении пароль должен хешироваться!
+                    password: user.password,
                     favoritePlayer: user.favoritePlayer,
                     favoritePlayerName: user.getPlayerName(user.favoritePlayer),
                     newsletter: user.newsletter,

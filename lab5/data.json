@@ -1,3 +1,38 @@
 {
-  "users": []
+  "/users": { 
+    "get": { 
+      "data": [
+        {
+          "id": 1,
+          "username": "user1",
+          "email": "user1@example.com",
+          "password": "password1",
+          "favoritePlayer": "kimmich",
+          "newsletter": true,
+          "terms": true
+        },
+        {
+          "id": 2,
+          "username": "user2",
+          "email": "user2@example.com",
+          "password": "password2",
+          "favoritePlayer": "kane",
+          "newsletter": false,
+          "terms": false
+        },
+        {
+          "id": 3,
+          "username": "user3",
+          "email": "user3@example.com",
+          "password": "password3",
+          "favoritePlayer": null,
+          "newsletter": false,
+          "terms": true
+        }
+      ] 
+    },
+    "post": {
+      "data": []
+    }
+  }
 }
