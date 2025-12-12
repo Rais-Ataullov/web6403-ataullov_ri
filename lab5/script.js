@@ -34,7 +34,7 @@ class UserData {
 }
 
 
-// 1. Динамическая проверка данных формы с выводом подсказок
+// Динамическая проверка данных формы с выводом подсказок
 function setupFormValidation() {
     const form = document.getElementById('registrationForm');
     if (!form) return;
@@ -46,7 +46,7 @@ function setupFormValidation() {
     const favoritePlayerSelect = document.getElementById('favoritePlayer');
     const termsCheckbox = document.getElementById('terms');
 
-    // Создаем контейнеры для подсказок
+    // Контейнеры для подсказок
     createHintContainers();
 
     // Валидация имени пользователя
@@ -152,9 +152,9 @@ function setupFormValidation() {
     }
 }
 
-// 2. Отправка данных формы на сервер через POST-запрос
+// Отправка данных формы на сервер через POST-запрос
 async function submitFormToServer(formData) {
-    const apiUrl = 'http://localhost:8000/users'; // URL вашего mock-json-server
+    const apiUrl = 'http://localhost:8000/users'; // URL для отправки данных
     
     try {
         const response = await fetch(apiUrl, {
@@ -178,7 +178,7 @@ async function submitFormToServer(formData) {
     }
 }
 
-// 3. Асинхронное получение данных с сервера с обработкой ошибок
+// Асинхронное получение данных с сервера с обработкой ошибок
 async function fetchDataFromServer() {
     const apiUrl = 'http://localhost:8000/users'; // URL для получения данных
     
@@ -199,24 +199,19 @@ async function fetchDataFromServer() {
         const data = await response.json();
         console.log('Данные успешно получены с сервера:', data);
         
-        // Обновляем UI с полученными данными
-        updateUIWithData(data);
-        
         return data;
     } catch (error) {
         console.error('Ошибка при получении данных с сервера:', error);
-        
-        // Показываем пользователю сообщение об ошибке
+
         showNotification(`Ошибка загрузки данных: ${error.message}`, 'error');
         
         throw error;
     }
 }
 
-// 4. Периодическое получение данных (раз в 5 минут)
+// Периодическое получение данных (раз в 5 минут)
 function setupPeriodicDataFetch() {
-    // Устанавливаем интервал для периодического обновления
-    const interval = 5 * 60 * 1000; // 5 минут в миллисекундах
+    const interval = 5 * 60 * 1000;
     setInterval(() => {
         fetchDataFromServer();
     }, interval);
@@ -234,24 +229,6 @@ function getPlayerName(playerKey) {
         'kane': 'Гарри Кейн'
     };
     return players[playerKey] || 'Не указан';
-}
-
-function updateUIWithData(data) {
-    // Здесь можно обновить интерфейс с полученными данными
-    // Например, показать количество зарегистрированных пользователей
-    const countElement = document.getElementById('user-count');
-    if (!countElement && data.length > 0) {
-        const main = document.querySelector('.main');
-        if (main) {
-            const countDiv = document.createElement('div');
-            countDiv.id = 'user-count';
-            countDiv.className = 'user-count';
-            countDiv.textContent = `Всего зарегистрировано болельщиков: ${data.length}`;
-            main.appendChild(countDiv);
-        }
-    } else if (countElement) {
-        countElement.textContent = `Всего зарегистрировано болельщиков: ${data.length}`;
-    }
 }
 
 function showNotification(message, type) {
@@ -273,10 +250,10 @@ function showNotification(message, type) {
 document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registrationForm');
     
-    // 1. Настраиваем динамическую валидацию формы
+    // Настраиваем динамическую валидацию формы
     setupFormValidation();
     
-    // 4. Настраиваем периодическое получение данных
+    // Настраиваем периодическое получение данных
     setupPeriodicDataFetch();
     
     if (registrationForm) {
@@ -317,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
             user.logToConsole();
             
             try {
-                // 2. Отправляем данные на сервер
+                // Отправляем данные на сервер
                 showNotification('Отправка данных на сервер...', 'info');
                 await submitFormToServer({
                     username: user.username,
@@ -330,7 +307,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     registrationDate: new Date().toISOString()
                 });
                 
-                // Показываем сообщение об успешной регистрации
                 showNotification(`Спасибо за регистрацию, ${username}! Данные успешно отправлены.`, 'success');
                 
                 // Очищаем форму
